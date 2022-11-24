@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Learning API</title>
+
+  <style>
+    body {
+        background: #3b0044;
+        color: #6098FF;
+        font-family: sans-serif;
+        font-size: 16px;
+    }
+      
+    .button_css {
+    color: #000000 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 2px solid #000000 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #ADFF2F;
+    border-color: #ADFF2F !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+ 
+ 
+ <div class="login">
+
+    <!-- Get input for predict the heart disease -->
+    <center>
+         <br>
+            <br>
+               <br>
+                  <br>
+                     <br>
+                        <br>
+                            <br>
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <h1>Enter the value of your heart features!!!</h1>
+        
+        <input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="RestingBP" placeholder="RestingBP" required="required" />
+        <input type="text" name="FastingBS" placeholder="FastingBS" required="required" />
+            <input type="text" name="Oldpeak" placeholder="Oldpeak" required="required" />
+        
+
+        <br>
+        <input type="text" name="Sex_F" placeholder="Sex_F" required="required" />
+        <input type="text" name="Sex_M" placeholder="Sex_M" required="required" />
+        <input type="text" name="ChestPainType_ASY" placeholder="ChestPainType_ASY" required="required" />
+            <input type="text" name="ChestPainType_ATA" placeholder="ChestPainType_ATA" required="required" />
+            
+        
+        <br>
+        <input type="text" name="ChestPainType_NAP" placeholder="ChestPainType_NAP" required="required" />
+        <input type="text" name="ChestPainType_TA" placeholder="ChestPainType_TA" required="required" />
+        <input type="text" name="RestingECG_LVH" placeholder="RestingECG_LVH" required="required" />
+            <input type="text" name="RestingECG_Normal" placeholder="RestingECG_Normal" required="required" />
+            
+        
+        <br>
+        <input type="text" name="RestingECG_ST" placeholder="RestingECG_ST" required="required" />
+        <input type="text" name="ST_Slope_Down" placeholder="ST_Slope_Down" required="required" />
+        <input type="text" name="ST_Slope_Flat" placeholder="ST_Slope_Flat" required="required" />
+            <input type="text" name="ST_Slope_Up" placeholder="ST_Slope_Up" required="required" />
+        <br>
+            <br>
+                <br>
+    
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Heart disease</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
